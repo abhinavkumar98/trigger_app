@@ -18,18 +18,18 @@ class _HomeScreenState extends State<HomeScreen> {
     void initState() {
       super.initState();
     }
+
     return Scaffold(
         appBar: AppBar(title: const Center(child: Text("Trigger App"))),
-        body: _buildUi()
-    );
+        body: _buildUi());
   }
 
-  Widget _buildUi(){
+  Widget _buildUi() {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     RandomCubit randomCubit;
     randomCubit = RandomCubit();
-    var getvalue = randomCubit.timestamp.toString();
+    var getSecondsValue = randomCubit.timestamp.toString();
     return Container(
       padding: const EdgeInsets.all(10),
       child: Column(
@@ -45,31 +45,31 @@ class _HomeScreenState extends State<HomeScreen> {
               child: BlocBuilder<RandomCubit, int>(
                 builder: (context, state) {
                   return Center(
-                    child: getvalue.toString() == state.toString()
+                    child: getSecondsValue.toString() == state.toString()
                         ? Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("Success",
-                            style: AppFontStyle.successTextStyle()),
-                        const Icon(
-                          Icons.check_circle,
-                          color: Colors.green,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 8),
-                          child: Text("${_counter+1}".toString(),style: AppFontStyle.successTextStyle()),
-                        ),
-                      ],
-                    )
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("Success",
+                                  style: AppFontStyle.successTextStyle()),
+                              const Icon(
+                                Icons.check_circle,
+                                color: Colors.green,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 8),
+                                child: Text("${_counter + 1}".toString(),
+                                    style: AppFontStyle.successTextStyle()),
+                              ),
+                            ],
+                          )
                         : Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("try again!!",
-                            style: AppFontStyle.titleTextStyle()),
-                        const Icon(Icons.error_outline,
-                            color: Colors.red)
-                      ],
-                    ),
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("try again!!",
+                                  style: AppFontStyle.titleTextStyle()),
+                              const Icon(Icons.error_outline, color: Colors.red)
+                            ],
+                          ),
                   );
                 },
               ),
@@ -83,12 +83,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 builder: (context, state) {
                   return InkWell(
                     onTap: () {
-                      if(getvalue.toString() == state.toString()){
+                      if (getSecondsValue.toString() == state.toString()) {
                         _incrementCounter();
                       }
                       setState(() {
                         context.read<RandomCubit>().generateRandomNumber();
-                        getvalue = randomCubit.timestamp;
+                        getSecondsValue = randomCubit.timestamp;
                       });
                     },
                     child: Card(
@@ -104,12 +104,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text("Generate",
-                                  style: AppFontStyle.titleTextStyle(),
+                              Text(
+                                "Generate",
+                                style: AppFontStyle.titleTextStyle(),
                                 textAlign: TextAlign.center,
                               ),
                               Text(
-                                getvalue,
+                                getSecondsValue,
                                 style: AppFontStyle.numberTextStyle(),
                               )
                             ],
@@ -143,8 +144,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
-
   }
+
   void _incrementCounter() {
     setState(() {
       _counter++;
