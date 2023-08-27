@@ -1,16 +1,3 @@
-# trigger_app
+<img width="281" alt="trigger_error" src="https://github.com/abhinavkumar98/trigger_app/assets/47697207/c8866193-1c20-4b79-8226-425aec696a7e">
+<img width="215" alt="trigger_success" src="https://github.com/abhinavkumar98/trigger_app/assets/47697207/3ebcf0d4-4ebf-4e2c-af34-3c01f0699b27">
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
